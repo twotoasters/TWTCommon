@@ -9,7 +9,7 @@ Example:
 TWTAlertViewDelegate* delegate = [[[TWTAlertViewDelegate alloc] init] autorelease];
 [delegate setTarget:self selector:@selector(myAction:) object:optionalObject forButtonIndex:1];
 [[[[UIAlertView alloc] initWithTitle:@"Title" 
-							 message:@"Message"
-							delegate:delegate
-				   cancelButtonTitle:@"Cancel"
-				   otherButtonTitles:@"Trigger Action", nil] autorelease] show];
+                             message:@"Message"
+                            delegate:delegate
+                   cancelButtonTitle:@"Cancel"
+                   otherButtonTitles:@"Trigger Action", nil] autorelease] show];

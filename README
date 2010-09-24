@@ -1,2 +1,15 @@
 Misc. downright useful classes & additions for iphone development (with three 20).
 TODO: write a README
+
+TWTAlertViewDelegate:
+- A generic class to hook actions up to alert views by button index.
+  Makes it easy to keep UIAlertViewDelegate crap out of your controllers.
+Example:
+
+TWTAlertViewDelegate* delegate = [[[TWTAlertViewDelegate alloc] init] autorelease];
+[delegate setTarget:self selector:@selector(myAction:) object:optionalObject forButtonIndex:1];
+[[[[UIAlertView alloc] initWithTitle:@"Title" 
+							 message:@"Message"
+							delegate:delegate
+				   cancelButtonTitle:@"Cancel"
+				   otherButtonTitles:@"Trigger Action", nil] autorelease] show];

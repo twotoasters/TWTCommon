@@ -7,23 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3F1BE365123951E9000778F6 /* TWTPickerDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F1BE363123951E9000778F6 /* TWTPickerDataSource.h */; };
+		253A02631253C7BF00976E89 /* TWTBundledAssetsURLCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 253A02611253C7BF00976E89 /* TWTBundledAssetsURLCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		253A02641253C7BF00976E89 /* TWTBundledAssetsURLCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 253A02621253C7BF00976E89 /* TWTBundledAssetsURLCache.m */; };
+		3F1BE365123951E9000778F6 /* TWTPickerDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F1BE363123951E9000778F6 /* TWTPickerDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3F1BE366123951E9000778F6 /* TWTPickerDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1BE364123951E9000778F6 /* TWTPickerDataSource.m */; };
-		3F1BE503123963AE000778F6 /* TWTDatePickerControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F1BE501123963AE000778F6 /* TWTDatePickerControl.h */; };
+		3F1BE503123963AE000778F6 /* TWTDatePickerControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F1BE501123963AE000778F6 /* TWTDatePickerControl.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3F1BE504123963AE000778F6 /* TWTDatePickerControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1BE502123963AE000778F6 /* TWTDatePickerControl.m */; };
-		3F1BE554123966B0000778F6 /* TTListDataSource+TWTAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 2538E25412316FB300ACB5D7 /* TTListDataSource+TWTAdditions.h */; };
-		3F1BE555123966B0000778F6 /* TTSectionedDataSource+TWTAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 2538EED21236BECE00ACB5D7 /* TTSectionedDataSource+TWTAdditions.h */; };
+		3F1BE554123966B0000778F6 /* TTListDataSource+TWTAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 2538E25412316FB300ACB5D7 /* TTListDataSource+TWTAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3F1BE555123966B0000778F6 /* TTSectionedDataSource+TWTAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 2538EED21236BECE00ACB5D7 /* TTSectionedDataSource+TWTAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3F1BE556123966B1000778F6 /* TTListDataSource+TWTAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2538E25512316FB300ACB5D7 /* TTListDataSource+TWTAdditions.m */; };
 		3F1BE557123966B2000778F6 /* TTSectionedDataSource+TWTAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2538EED31236BECE00ACB5D7 /* TTSectionedDataSource+TWTAdditions.m */; };
-		3F543BC2124CFF3100580ECF /* TWTAlertViewDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F543BC0124CFF3100580ECF /* TWTAlertViewDelegate.h */; };
+		3F543BC2124CFF3100580ECF /* TWTAlertViewDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F543BC0124CFF3100580ECF /* TWTAlertViewDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3F543BC3124CFF3100580ECF /* TWTAlertViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F543BC1124CFF3100580ECF /* TWTAlertViewDelegate.m */; };
-		3FE77DD6122701D700C4F677 /* TWTPickerControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FE77DD4122701D700C4F677 /* TWTPickerControl.h */; };
+		3FE77DD6122701D700C4F677 /* TWTPickerControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FE77DD4122701D700C4F677 /* TWTPickerControl.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3FE77DD7122701D700C4F677 /* TWTPickerControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FE77DD5122701D700C4F677 /* TWTPickerControl.m */; };
-		3FE77DDB1227029600C4F677 /* UIView+TWTAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FE77DD91227029600C4F677 /* UIView+TWTAdditions.h */; };
+		3FE77DDB1227029600C4F677 /* UIView+TWTAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FE77DD91227029600C4F677 /* UIView+TWTAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3FE77DDC1227029600C4F677 /* UIView+TWTAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FE77DDA1227029600C4F677 /* UIView+TWTAdditions.m */; };
-		3FE77DDF122702F300C4F677 /* NSString+TWTAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FE77DDD122702F300C4F677 /* NSString+TWTAdditions.h */; };
+		3FE77DDF122702F300C4F677 /* NSString+TWTAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FE77DDD122702F300C4F677 /* NSString+TWTAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3FE77DE0122702F300C4F677 /* NSString+TWTAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FE77DDE122702F300C4F677 /* NSString+TWTAdditions.m */; };
-		AA747D9F0F9514B9006C5449 /* TWTCommon_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* TWTCommon_Prefix.pch */; };
+		AA747D9F0F9514B9006C5449 /* TWTCommon_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* TWTCommon_Prefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
 		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +34,8 @@
 		2538E25512316FB300ACB5D7 /* TTListDataSource+TWTAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TTListDataSource+TWTAdditions.m"; sourceTree = "<group>"; };
 		2538EED21236BECE00ACB5D7 /* TTSectionedDataSource+TWTAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TTSectionedDataSource+TWTAdditions.h"; sourceTree = "<group>"; };
 		2538EED31236BECE00ACB5D7 /* TTSectionedDataSource+TWTAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TTSectionedDataSource+TWTAdditions.m"; sourceTree = "<group>"; };
+		253A02611253C7BF00976E89 /* TWTBundledAssetsURLCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TWTBundledAssetsURLCache.h; path = Code/TWTBundledAssetsURLCache.h; sourceTree = "<group>"; };
+		253A02621253C7BF00976E89 /* TWTBundledAssetsURLCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TWTBundledAssetsURLCache.m; path = Code/TWTBundledAssetsURLCache.m; sourceTree = "<group>"; };
 		3F1BE363123951E9000778F6 /* TWTPickerDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWTPickerDataSource.h; sourceTree = "<group>"; };
 		3F1BE364123951E9000778F6 /* TWTPickerDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWTPickerDataSource.m; sourceTree = "<group>"; };
 		3F1BE501123963AE000778F6 /* TWTDatePickerControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWTDatePickerControl.h; sourceTree = "<group>"; };
@@ -102,6 +106,8 @@
 				2538E25512316FB300ACB5D7 /* TTListDataSource+TWTAdditions.m */,
 				2538EED21236BECE00ACB5D7 /* TTSectionedDataSource+TWTAdditions.h */,
 				2538EED31236BECE00ACB5D7 /* TTSectionedDataSource+TWTAdditions.m */,
+				253A02611253C7BF00976E89 /* TWTBundledAssetsURLCache.h */,
+				253A02621253C7BF00976E89 /* TWTBundledAssetsURLCache.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -143,6 +149,7 @@
 				3F1BE554123966B0000778F6 /* TTListDataSource+TWTAdditions.h in Headers */,
 				3F1BE555123966B0000778F6 /* TTSectionedDataSource+TWTAdditions.h in Headers */,
 				3F543BC2124CFF3100580ECF /* TWTAlertViewDelegate.h in Headers */,
+				253A02631253C7BF00976E89 /* TWTBundledAssetsURLCache.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,6 +211,7 @@
 				3F1BE556123966B1000778F6 /* TTListDataSource+TWTAdditions.m in Sources */,
 				3F1BE557123966B2000778F6 /* TTSectionedDataSource+TWTAdditions.m in Sources */,
 				3F543BC3124CFF3100580ECF /* TWTAlertViewDelegate.m in Sources */,
+				253A02641253C7BF00976E89 /* TWTBundledAssetsURLCache.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,6 +223,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)";
 				COPY_PHASE_STRIP = NO;
 				DSTROOT = /tmp/TWTCommon.dst;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -225,11 +234,15 @@
 				GCC_PREFIX_HEADER = TWTCommon_Prefix.pch;
 				HEADER_SEARCH_PATHS = ../three20/Build/Products/three20;
 				INSTALL_PATH = /usr/local/lib;
+				OBJROOT = "$(PROJECT_DIR)/Build";
 				OTHER_LDFLAGS = (
 					"-all_load",
 					"-ObjC",
 				);
+				PRIVATE_HEADERS_FOLDER_PATH = private;
 				PRODUCT_NAME = TWTCommon;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SYMROOT = "$(PROJECT_DIR)/Build/Products/TWTCommon";
 			};
 			name = Debug;
 		};
@@ -238,17 +251,22 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)";
 				DSTROOT = /tmp/TWTCommon.dst;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = TWTCommon_Prefix.pch;
 				HEADER_SEARCH_PATHS = ../three20/Build/Products/three20;
 				INSTALL_PATH = /usr/local/lib;
+				OBJROOT = "$(PROJECT_DIR)/Build";
 				OTHER_LDFLAGS = (
 					"-all_load",
 					"-ObjC",
 				);
+				PRIVATE_HEADERS_FOLDER_PATH = private;
 				PRODUCT_NAME = TWTCommon;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SYMROOT = "$(PROJECT_DIR)/Build/Products/TWTCommon";
 			};
 			name = Release;
 		};
@@ -262,7 +280,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PREBINDING = NO;
-				SDKROOT = iphoneos4.0;
+				SDKROOT = iphoneos4.1;
 			};
 			name = Debug;
 		};
@@ -275,7 +293,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PREBINDING = NO;
-				SDKROOT = iphoneos4.0;
+				SDKROOT = iphoneos4.1;
 			};
 			name = Release;
 		};

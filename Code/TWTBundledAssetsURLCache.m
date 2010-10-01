@@ -12,12 +12,14 @@
 
 @synthesize assetMappings = _assetMappings;
 @synthesize MIMETypeMappings = _MIMETypeMappings;
+@synthesize bundle = _bundle;
 
 - (id)initWithAssetMappings:(NSDictionary*)URLToFilenameMappings MIMETypeMappings:(NSDictionary*)fileExtensionToMIMETypeMappings {
 	if (self = [super init]) {
 		_assetMappings = [[NSMutableDictionary dictionaryWithDictionary:URLToFilenameMappings] retain];
 		_MIMETypeMappings = [[NSMutableDictionary dictionaryWithDictionary:fileExtensionToMIMETypeMappings] retain];
 		_cachedResponses = [[NSMutableDictionary alloc] init];
+		_bundle = [NSBundle mainBundle];
 	}
 	
 	return self;
@@ -28,6 +30,7 @@
 		_assetMappings = [[NSMutableDictionary alloc] init];
 		_MIMETypeMappings = [[NSMutableDictionary alloc] init];
 		_cachedResponses = [[NSMutableDictionary alloc] init];
+		_bundle = [NSBundle mainBundle];
 	}
 	
 	return self;
@@ -40,6 +43,8 @@
 	_MIMETypeMappings = nil;
 	[_cachedResponses release];
 	_cachedResponses = nil;
+	[_bundle release];
+	_bundle = nil;
 	
 	[super dealloc];
 }
@@ -71,7 +76,7 @@
 	}
 	
 	// Get the path to the substitution file
-	NSString* substitutionFilePath = [[NSBundle mainBundle]
+	NSString* substitutionFilePath = [self.bundle
 									  pathForResource:[substitutionFileName stringByDeletingPathExtension]
 									  ofType:[substitutionFileName pathExtension]];
 	NSAssert(substitutionFilePath, @"File %@ in substitutionPaths didn't exist", substitutionFileName);
@@ -80,7 +85,7 @@
 	NSData* data = [NSData dataWithContentsOfFile:substitutionFilePath];
 	
 	// Create the cacheable response
-	// TODO: The extensions...
+//	NSLog(@"Using bundled asset %@ for URL %@", substitutionFilePath, URLString);
 	NSURLResponse *response = [[[NSURLResponse alloc] initWithURL:[request URL]
 														 MIMEType:[self mimeTypeForURLString:URLString]
 											expectedContentLength:[data length]
@@ -96,11 +101,19 @@
 - (void)removeCachedResponseForRequest:(NSURLRequest *)request {
 	// Get the path for the request
 	NSString* URLString = [[request URL] absoluteString];
+	
 	if ([_cachedResponses objectForKey:URLString]) {
 		[_cachedResponses removeObjectForKey:URLString];
 	} else {
 		[super removeCachedResponseForRequest:request];
 	}
+}
+
+- (void)removeAllCachedResponses {
+	[_cachedResponses release];
+	_cachedResponses = [[NSMutableDictionary alloc] init];
+	
+	[super removeAllCachedResponses];
 }
 
 @end

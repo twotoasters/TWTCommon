@@ -22,6 +22,7 @@
 	NSMutableDictionary* _cachedResponses;
 	NSMutableDictionary* _assetMappings;
 	NSMutableDictionary* _MIMETypeMappings;
+	NSBundle* _bundle;
 }
 
 /**
@@ -37,6 +38,13 @@
  * files with the given extension loaded from the cache (i.e. 'png' => 'image/png')
  */
 @property (nonatomic, readonly) NSMutableDictionary* MIMETypeMappings;
+
+/**
+ * The bundle to load assets from. 
+ * 
+ * Defaults to [NSBundle mainBundle]
+ */
+@property (nonatomic, retain) NSBundle* bundle;
 
 /**
  * Initialize a new URL cache with a dictionary of URL to filename mappings specifying assets in the main bundle to

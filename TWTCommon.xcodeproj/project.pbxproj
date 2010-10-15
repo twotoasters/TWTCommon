@@ -27,6 +27,8 @@
 		253A07131255109A00976E89 /* UIView+TWTAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 253A07001255109A00976E89 /* UIView+TWTAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		253A07141255109A00976E89 /* UIView+TWTAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 253A07011255109A00976E89 /* UIView+TWTAdditions.m */; };
 		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
+		DB750A81126791770061662C /* TWTActionSheetDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DB750A7F126791770061662C /* TWTActionSheetDelegate.m */; };
+		DBAF65E91267965A0043E289 /* TWTActionSheetDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = DB750A7E126791770061662C /* TWTActionSheetDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +53,8 @@
 		253A07011255109A00976E89 /* UIView+TWTAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+TWTAdditions.m"; path = "Code/UIView+TWTAdditions.m"; sourceTree = "<group>"; };
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D2AAC07E0554694100DB518D /* libTWTCommon.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTWTCommon.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB750A7E126791770061662C /* TWTActionSheetDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TWTActionSheetDelegate.h; path = Code/TWTActionSheetDelegate.h; sourceTree = "<group>"; };
+		DB750A7F126791770061662C /* TWTActionSheetDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TWTActionSheetDelegate.m; path = Code/TWTActionSheetDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +117,8 @@
 				253A06FF1255109A00976E89 /* TWTPickerDataSource.m */,
 				253A07001255109A00976E89 /* UIView+TWTAdditions.h */,
 				253A07011255109A00976E89 /* UIView+TWTAdditions.m */,
+				DB750A7E126791770061662C /* TWTActionSheetDelegate.h */,
+				DB750A7F126791770061662C /* TWTActionSheetDelegate.m */,
 			);
 			name = Code;
 			sourceTree = "<group>";
@@ -134,6 +140,7 @@
 				253A070F1255109A00976E89 /* TWTPickerControl.h in Headers */,
 				253A07111255109A00976E89 /* TWTPickerDataSource.h in Headers */,
 				253A07131255109A00976E89 /* UIView+TWTAdditions.h in Headers */,
+				DBAF65E91267965A0043E289 /* TWTActionSheetDelegate.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,6 +203,7 @@
 				253A07101255109A00976E89 /* TWTPickerControl.m in Sources */,
 				253A07121255109A00976E89 /* TWTPickerDataSource.m in Sources */,
 				253A07141255109A00976E89 /* UIView+TWTAdditions.m in Sources */,
+				DB750A81126791770061662C /* TWTActionSheetDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

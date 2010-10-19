@@ -42,7 +42,13 @@
 
 - (void)datePickerChanged:(id)sender {
 	NSDateFormatter* formatter = [[[NSDateFormatter alloc] init] autorelease];
-	[formatter setDateFormat:@"EEE MMM d'%@', h:mma"];
+	
+	if(UIDatePickerModeDate == [_picker datePickerMode]) {
+		[formatter setDateFormat:@"EEE MMM d'%@'"];
+	} else {
+		[formatter setDateFormat:@"EEE MMM d'%@', h:mma"];
+	}
+	
 	NSDate* date = [(UIDatePicker*)_picker date];
 	NSDateComponents* components = [[NSCalendar currentCalendar] components:NSDayCalendarUnit fromDate:date];
 	NSString* daySuffex;

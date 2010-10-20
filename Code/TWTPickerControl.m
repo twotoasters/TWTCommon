@@ -237,6 +237,11 @@
 	[self updateLabel];
 }
 
+- (void)layoutSubviews {
+	[super layoutSubviews];
+	_label.frame = self.bounds;
+}
+
 // Picker View DataSource
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {

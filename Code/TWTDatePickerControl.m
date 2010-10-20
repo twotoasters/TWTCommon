@@ -43,7 +43,7 @@
 - (void)datePickerChanged:(id)sender {
 	NSDateFormatter* formatter = [[[NSDateFormatter alloc] init] autorelease];
 	
-	if(UIDatePickerModeDate == [_picker datePickerMode]) {
+	if(UIDatePickerModeDate == [(UIDatePicker*)_picker datePickerMode]) {
 		[formatter setDateFormat:@"EEE MMM d'%@'"];
 	} else {
 		[formatter setDateFormat:@"EEE MMM d'%@', h:mma"];

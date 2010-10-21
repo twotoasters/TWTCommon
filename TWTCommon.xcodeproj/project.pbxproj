@@ -159,6 +159,7 @@
 			buildConfigurationList = 1DEB921E08733DC00010E9CD /* Build configuration list for PBXNativeTarget "TWTCommon" */;
 			buildPhases = (
 				D2AAC07A0554694100DB518D /* Headers */,
+				257FFF531270C63900424BC0 /* Protect Copied Headers */,
 				D2AAC07B0554694100DB518D /* Sources */,
 				D2AAC07C0554694100DB518D /* Frameworks */,
 			);
@@ -176,6 +177,9 @@
 /* Begin PBXProject section */
 		0867D690FE84028FC02AAC07 /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "Two Toasters";
+			};
 			buildConfigurationList = 1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "TWTCommon" */;
 			compatibilityVersion = "Xcode 3.1";
 			developmentRegion = English;
@@ -195,6 +199,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		257FFF531270C63900424BC0 /* Protect Copied Headers */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Protect Copied Headers";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "chmod -w $BUILD_DIR/TWTCommon/*.h";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D2AAC07B0554694100DB518D /* Sources */ = {

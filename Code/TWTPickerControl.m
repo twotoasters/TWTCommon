@@ -136,10 +136,18 @@
 	_pickerView.frame = CGRectMake(0, self.window.bounds.size.height + _pickerView.bounds.size.height, 320, _pickerView.bounds.size.height);
 	[UIView commitAnimations];
 	_label.font = self.font;
+	
 	if ([_delegate respondsToSelector:@selector(picker:willHidePicker:)]) {
 		[_delegate picker:self willHidePicker:_pickerView];
 	}
-	return [super resignFirstResponder];
+	
+	BOOL result = [super resignFirstResponder];
+	
+	if (result && [_delegate respondsToSelector:@selector(picker:didHidePicker:)]) {
+		[_delegate picker:self didHidePicker:_pickerView];
+	}
+	
+	return result;
 }
 
 - (BOOL)becomeFirstResponder {

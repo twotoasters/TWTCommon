@@ -49,8 +49,16 @@
 		return;
 	}
 	NSDate* date = [(UIDatePicker*)_picker date];
-	if (date) {
+	if (date) {		
 		NSDateFormatter* formatter = [[[NSDateFormatter alloc] init] autorelease];
+		
+		// Set the text to 'Today' if appropriate
+		NSDate* today = [NSDate date];
+		[formatter setDateStyle:NSDateFormatterShortStyle];
+		if ([[formatter stringFromDate:date] isEqualToString:[formatter stringFromDate:today]]) {
+			_label.text = @"Today";
+			return;
+		}
 
 		if(UIDatePickerModeDate == [(UIDatePicker*)_picker datePickerMode]) {
 			[formatter setDateFormat:@"EEE MMM d'%@'"];

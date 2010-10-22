@@ -14,6 +14,10 @@ static NSString* const kTWTActionSheetDelegateObjectKey = @"object";
 
 @implementation TWTActionSheetDelegate
 
++ (id)actionSheetDelegate {
+	return [[[self alloc] init] autorelease];
+}
+
 - (id)init {
 	if (self = [super init]) {
 		_actionsByButtonIndex = [[NSMutableDictionary alloc] init];

@@ -13,6 +13,7 @@
 	NSMutableDictionary* _actionsByButtonIndex;
 }
 
++ (id)actionSheetDelegate;
 - (void)setTarget:(id)target selector:(SEL)selector object:(id)object forButtonIndex:(int)buttonIndex;
 
 @end

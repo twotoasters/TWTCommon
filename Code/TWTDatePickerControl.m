@@ -20,6 +20,7 @@
 		[_picker removeFromSuperview];
 		[_picker release];
 		_picker = [[UIDatePicker alloc] initWithFrame:CGRectMake(0, 48, 320, 150)];
+		[(UIDatePicker*)_picker setDatePickerMode:mode];
 		[(UIDatePicker*)_picker setMinimumDate:startDate];
 		[(UIDatePicker*)_picker setMaximumDate:endDate];
 		[(UIDatePicker*)_picker setMinuteInterval:5];
@@ -39,27 +40,56 @@
 	[self datePickerChanged:self];
 }
 
-- (void)datePickerChanged:(id)sender {
-	NSDateFormatter* formatter = [[[NSDateFormatter alloc] init] autorelease];
-	[formatter setDateFormat:@"EEE MMM d'%@', h:mma"];
-	NSDate* date = [(UIDatePicker*)_picker date];
-	NSDateComponents* components = [[NSCalendar currentCalendar] components:NSDayCalendarUnit fromDate:date];
-	NSString* daySuffex;
-	switch (components.day) {
-		case 1:
-			daySuffex = @"st";
-			break;
-		case 2:
-			daySuffex = @"nd";
-			break;
-		case 3:
-			daySuffex = @"rd";
-			break;
-		default:
-			daySuffex = @"th";
-			break;
+- (BOOL)hasSelection {
+	return [_picker isKindOfClass:[UIDatePicker class]] &&([(UIDatePicker*)_picker date] != nil);
+}
+
+- (void)updateLabel {
+	if (![_picker isKindOfClass:[UIDatePicker class]]) {
+		return;
 	}
-	_label.text = [NSString stringWithFormat:[formatter stringFromDate:date], daySuffex];
+	NSDate* date = [(UIDatePicker*)_picker date];
+	if (date) {		
+		NSDateFormatter* formatter = [[[NSDateFormatter alloc] init] autorelease];
+		
+		// Set the text to 'Today' if appropriate
+		NSDate* today = [NSDate date];
+		[formatter setDateStyle:NSDateFormatterShortStyle];
+		if ([[formatter stringFromDate:date] isEqualToString:[formatter stringFromDate:today]]) {
+			_label.text = @"Today";
+			return;
+		}
+
+		if(UIDatePickerModeDate == [(UIDatePicker*)_picker datePickerMode]) {
+			[formatter setDateFormat:@"EEE MMM d'%@'"];
+		} else {
+			[formatter setDateFormat:@"EEE MMM d'%@', h:mma"];
+		}
+
+		NSDateComponents* components = [[NSCalendar currentCalendar] components:NSDayCalendarUnit fromDate:date];
+		NSString* daySuffex;
+		switch (components.day) {
+			case 1:
+				daySuffex = @"st";
+				break;
+			case 2:
+				daySuffex = @"nd";
+				break;
+			case 3:
+				daySuffex = @"rd";
+				break;
+			default:
+				daySuffex = @"th";
+				break;
+		}
+		_label.text = [NSString stringWithFormat:[formatter stringFromDate:date], daySuffex];
+	} else {
+		_label.text = self.placeholderText;
+	}
+}
+
+- (void)datePickerChanged:(id)sender {
+	[self updateLabel];
 }
 
 @end

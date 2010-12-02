@@ -27,6 +27,10 @@
 		253A07131255109A00976E89 /* UIView+TWTAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 253A07001255109A00976E89 /* UIView+TWTAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		253A07141255109A00976E89 /* UIView+TWTAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 253A07011255109A00976E89 /* UIView+TWTAdditions.m */; };
 		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
+		DB340D05126DE67500598154 /* TWTSwitch.h in Headers */ = {isa = PBXBuildFile; fileRef = DB340D03126DE67500598154 /* TWTSwitch.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB340D06126DE67500598154 /* TWTSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = DB340D04126DE67500598154 /* TWTSwitch.m */; };
+		DB750A81126791770061662C /* TWTActionSheetDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DB750A7F126791770061662C /* TWTActionSheetDelegate.m */; };
+		DBAF65E91267965A0043E289 /* TWTActionSheetDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = DB750A7E126791770061662C /* TWTActionSheetDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +55,10 @@
 		253A07011255109A00976E89 /* UIView+TWTAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+TWTAdditions.m"; path = "Code/UIView+TWTAdditions.m"; sourceTree = "<group>"; };
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D2AAC07E0554694100DB518D /* libTWTCommon.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTWTCommon.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB340D03126DE67500598154 /* TWTSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TWTSwitch.h; path = Code/TWTSwitch.h; sourceTree = "<group>"; };
+		DB340D04126DE67500598154 /* TWTSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TWTSwitch.m; path = Code/TWTSwitch.m; sourceTree = "<group>"; };
+		DB750A7E126791770061662C /* TWTActionSheetDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TWTActionSheetDelegate.h; path = Code/TWTActionSheetDelegate.h; sourceTree = "<group>"; };
+		DB750A7F126791770061662C /* TWTActionSheetDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TWTActionSheetDelegate.m; path = Code/TWTActionSheetDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +102,8 @@
 		08FB77AEFE84172EC02AAC07 /* Code */ = {
 			isa = PBXGroup;
 			children = (
+				DB340D03126DE67500598154 /* TWTSwitch.h */,
+				DB340D04126DE67500598154 /* TWTSwitch.m */,
 				253A06EF1255109900976E89 /* NSString+TWTAdditions.h */,
 				253A06F01255109900976E89 /* NSString+TWTAdditions.m */,
 				253A06F11255109A00976E89 /* TTListDataSource+TWTAdditions.h */,
@@ -113,6 +123,8 @@
 				253A06FF1255109A00976E89 /* TWTPickerDataSource.m */,
 				253A07001255109A00976E89 /* UIView+TWTAdditions.h */,
 				253A07011255109A00976E89 /* UIView+TWTAdditions.m */,
+				DB750A7E126791770061662C /* TWTActionSheetDelegate.h */,
+				DB750A7F126791770061662C /* TWTActionSheetDelegate.m */,
 			);
 			name = Code;
 			sourceTree = "<group>";
@@ -134,6 +146,8 @@
 				253A070F1255109A00976E89 /* TWTPickerControl.h in Headers */,
 				253A07111255109A00976E89 /* TWTPickerDataSource.h in Headers */,
 				253A07131255109A00976E89 /* UIView+TWTAdditions.h in Headers */,
+				DBAF65E91267965A0043E289 /* TWTActionSheetDelegate.h in Headers */,
+				DB340D05126DE67500598154 /* TWTSwitch.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,6 +159,7 @@
 			buildConfigurationList = 1DEB921E08733DC00010E9CD /* Build configuration list for PBXNativeTarget "TWTCommon" */;
 			buildPhases = (
 				D2AAC07A0554694100DB518D /* Headers */,
+				257FFF531270C63900424BC0 /* Protect Copied Headers */,
 				D2AAC07B0554694100DB518D /* Sources */,
 				D2AAC07C0554694100DB518D /* Frameworks */,
 			);
@@ -162,6 +177,9 @@
 /* Begin PBXProject section */
 		0867D690FE84028FC02AAC07 /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "Two Toasters";
+			};
 			buildConfigurationList = 1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "TWTCommon" */;
 			compatibilityVersion = "Xcode 3.1";
 			developmentRegion = English;
@@ -182,6 +200,23 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		257FFF531270C63900424BC0 /* Protect Copied Headers */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Protect Copied Headers";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "chmod -w \"${BUILD_DIR}/TWTCommon\"/*.h";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D2AAC07B0554694100DB518D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -196,6 +231,8 @@
 				253A07101255109A00976E89 /* TWTPickerControl.m in Sources */,
 				253A07121255109A00976E89 /* TWTPickerDataSource.m in Sources */,
 				253A07141255109A00976E89 /* UIView+TWTAdditions.m in Sources */,
+				DB750A81126791770061662C /* TWTActionSheetDelegate.m in Sources */,
+				DB340D06126DE67500598154 /* TWTSwitch.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,6 +244,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				BUILD_STYLE = Debug;
 				COPY_PHASE_STRIP = NO;
 				DSTROOT = /tmp/TWTCommon.dst;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -227,6 +265,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				BUILD_STYLE = Release;
 				DSTROOT = /tmp/TWTCommon.dst;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -242,6 +281,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				BUILD_STYLE = Debug;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -256,6 +296,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				BUILD_STYLE = Release;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;

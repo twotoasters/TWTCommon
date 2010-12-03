@@ -26,6 +26,8 @@
 		253A07121255109A00976E89 /* TWTPickerDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 253A06FF1255109A00976E89 /* TWTPickerDataSource.m */; };
 		253A07131255109A00976E89 /* UIView+TWTAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 253A07001255109A00976E89 /* UIView+TWTAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		253A07141255109A00976E89 /* UIView+TWTAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 253A07011255109A00976E89 /* UIView+TWTAdditions.m */; };
+		3F05FEF512A95E5B00925C09 /* TWTGroupedPickerControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F05FEF312A95E5B00925C09 /* TWTGroupedPickerControl.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3F05FEF612A95E5B00925C09 /* TWTGroupedPickerControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F05FEF412A95E5B00925C09 /* TWTGroupedPickerControl.m */; };
 		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
 		DB340D05126DE67500598154 /* TWTSwitch.h in Headers */ = {isa = PBXBuildFile; fileRef = DB340D03126DE67500598154 /* TWTSwitch.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DB340D06126DE67500598154 /* TWTSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = DB340D04126DE67500598154 /* TWTSwitch.m */; };
@@ -53,6 +55,8 @@
 		253A06FF1255109A00976E89 /* TWTPickerDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TWTPickerDataSource.m; path = Code/TWTPickerDataSource.m; sourceTree = "<group>"; };
 		253A07001255109A00976E89 /* UIView+TWTAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+TWTAdditions.h"; path = "Code/UIView+TWTAdditions.h"; sourceTree = "<group>"; };
 		253A07011255109A00976E89 /* UIView+TWTAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+TWTAdditions.m"; path = "Code/UIView+TWTAdditions.m"; sourceTree = "<group>"; };
+		3F05FEF312A95E5B00925C09 /* TWTGroupedPickerControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWTGroupedPickerControl.h; sourceTree = "<group>"; };
+		3F05FEF412A95E5B00925C09 /* TWTGroupedPickerControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWTGroupedPickerControl.m; sourceTree = "<group>"; };
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D2AAC07E0554694100DB518D /* libTWTCommon.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTWTCommon.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB340D03126DE67500598154 /* TWTSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TWTSwitch.h; path = Code/TWTSwitch.h; sourceTree = "<group>"; };
@@ -125,6 +129,8 @@
 				253A07011255109A00976E89 /* UIView+TWTAdditions.m */,
 				DB750A7E126791770061662C /* TWTActionSheetDelegate.h */,
 				DB750A7F126791770061662C /* TWTActionSheetDelegate.m */,
+				3F05FEF312A95E5B00925C09 /* TWTGroupedPickerControl.h */,
+				3F05FEF412A95E5B00925C09 /* TWTGroupedPickerControl.m */,
 			);
 			name = Code;
 			sourceTree = "<group>";
@@ -148,6 +154,7 @@
 				253A07131255109A00976E89 /* UIView+TWTAdditions.h in Headers */,
 				DBAF65E91267965A0043E289 /* TWTActionSheetDelegate.h in Headers */,
 				DB340D05126DE67500598154 /* TWTSwitch.h in Headers */,
+				3F05FEF512A95E5B00925C09 /* TWTGroupedPickerControl.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,6 +240,7 @@
 				253A07141255109A00976E89 /* UIView+TWTAdditions.m in Sources */,
 				DB750A81126791770061662C /* TWTActionSheetDelegate.m in Sources */,
 				DB340D06126DE67500598154 /* TWTSwitch.m in Sources */,
+				3F05FEF612A95E5B00925C09 /* TWTGroupedPickerControl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

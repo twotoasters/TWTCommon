@@ -155,6 +155,7 @@
 	for (int i = 0; i < [[self.dataSource components] count]; i++) {
 		if ([self.selection objectAtIndex:i] == [NSNull null]) {
 			[self.selection replaceObjectAtIndex:i withObject:[NSNumber numberWithInt:0]];
+			[self pickerView:_picker didSelectRow:0 inComponent:i];
 		}
 	}
 	[self updateLabel];

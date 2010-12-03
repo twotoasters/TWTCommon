@@ -117,7 +117,20 @@
 	} else {
 		NSMutableArray* array = [NSMutableArray arrayWithCapacity:[self.selection count]];
 		for (int i = 0; i < [self.selection count]; i++) {
-			[array addObject:[self pickerView:_picker titleForRow:[[self.selection objectAtIndex:i] intValue] forComponent:i]];
+			NSString* titleForRow = [self pickerView:_picker titleForRow:[[self.selection objectAtIndex:i] intValue] forComponent:i];
+			
+			if (nil == titleForRow) {
+				UIView* viewForRow = [self pickerView:_picker viewForRow:[[self.selection objectAtIndex:i] intValue] forComponent:i reusingView:nil];
+				
+				if (viewForRow && [viewForRow isKindOfClass:[UILabel class]]) {
+					titleForRow = ((UILabel*)viewForRow).text;
+				}
+				else {
+					titleForRow = @"error";
+				}
+			}
+			
+			[array addObject:titleForRow];
 		}
 		if ([_delegate respondsToSelector:@selector(picker:labelTextForChoices:)]) {
 			self.textLabel.text = [_delegate picker:self labelTextForChoices:array];

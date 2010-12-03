@@ -44,9 +44,30 @@
 // Picker View Delegate
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-	NSArray* totalObjects = [self rowsForComponent:component replaceOptionTitlesWithNULL:NO];
-	return [totalObjects objectAtIndex:row];
+	return nil;
 }
+
+- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view {
+	UILabel* label = [[[UILabel alloc] initWithFrame:CGRectMake(0, 0, 270, 32)] autorelease];
+	label.backgroundColor = [UIColor clearColor];
+	label.font = [UIFont boldSystemFontOfSize:18];
+	
+	NSArray* totalObjects = [self rowsForComponent:component replaceOptionTitlesWithNULL:NO];
+	label.text = [totalObjects objectAtIndex:row];
+
+	if ([self isOptionTitleRow:row forComponent:component]) {
+		label.textColor = [UIColor lightGrayColor];
+	} else {
+		label.frame = CGRectMake(0, 0, 220, 32);
+	}
+
+	return label;
+}
+
+//- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+//	NSArray* totalObjects = [self rowsForComponent:component replaceOptionTitlesWithNULL:NO];
+//	return [totalObjects objectAtIndex:row];
+//}
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
 	// test to see if this is a key or a value

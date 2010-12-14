@@ -220,10 +220,8 @@
 	
 	// Ensure the underlying picker selection is correct
 	for (NSInteger i = 0; i < [[self.dataSource components] count]; i++) {		
-		NSNumber* row = [selection objectAtIndex:i];
-		if ([row isKindOfClass:[NSNumber class]]) {
-			[_picker selectRow:[row intValue] inComponent:i animated:YES];
-		}
+		int row = [[self.dataSource.components objectAtIndex:i] indexOfObject:[selection objectAtIndex:i]];
+		[_picker selectRow:row inComponent:i animated:YES];
 	}
 	
 	[self updateLabel];

@@ -21,6 +21,7 @@
 @implementation TWTPickerControl
 
 // todo: The following need to update UI when set. Perhaps a -redraw: method to call after?
+@synthesize pickerView = _pickerView;
 @synthesize placeholderText = _placeholderText;
 @synthesize font = _font;
 @synthesize selectedFont = _selectedFont;

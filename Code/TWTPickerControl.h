@@ -32,6 +32,8 @@
 	NSMutableArray* _selection;
 }
 
+@property (nonatomic, readonly) UIView* pickerView;
+
 /**
  * This text is displayed on the label when no choice has been selected
  */

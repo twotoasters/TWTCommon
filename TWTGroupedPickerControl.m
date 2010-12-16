@@ -78,5 +78,21 @@
 	[super pickerView:pickerView didSelectRow:row inComponent:component];
 }
 		 
+- (void)setSelection:(NSMutableArray *)selection {
+	[selection retain];
+	[_selection release];
+	_selection = selection;
+	
+	// Ensure the underlying picker selection is correct
+	for (NSInteger i = 0; i < [[self.dataSource components] count]; i++) {		
+		if ([[selection objectAtIndex:i] isKindOfClass:[NSNull class]]) continue;
+		
+		//int row = [[self.dataSource.components objectAtIndex:i] indexOfObject:[selection objectAtIndex:i]];
+		int row = [[selection objectAtIndex:i] intValue];
+		[_picker selectRow:row inComponent:i animated:YES];
+	}
+	
+	[self updateLabel];
+}
 
 @end

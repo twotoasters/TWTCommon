@@ -220,7 +220,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "chmod -w \"${TARGET_BUILD_DIR}/${PUBLIC_HEADERS_FOLDER_PATH}\"/*.h";
+			shellScript = "chmod -w \"${BUILT_PRODUCTS_DIR}/include/TWTCommon\"/*.h";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -254,6 +254,7 @@
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				BUILD_STYLE = Debug;
 				COPY_PHASE_STRIP = NO;
+				DSTROOT = /tmp/TWTCommon.dst;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_MODEL_TUNING = G5;
@@ -261,9 +262,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Code/TWTCommon_Prefix.pch;
 				HEADER_SEARCH_PATHS = ../three20/Build/Products/three20/;
-				INSTALL_PATH = "";
+				INSTALL_PATH = /usr/local/lib;
+				PRIVATE_HEADERS_FOLDER_PATH = include/TWTCommon/Private;
 				PRODUCT_NAME = TWTCommon;
-				PUBLIC_HEADERS_FOLDER_PATH = TWTCommon;
+				PUBLIC_HEADERS_FOLDER_PATH = include/TWTCommon;
 			};
 			name = Debug;
 		};
@@ -273,13 +275,15 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				BUILD_STYLE = Release;
+				DSTROOT = /tmp/TWTCommon.dst;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Code/TWTCommon_Prefix.pch;
 				HEADER_SEARCH_PATHS = ../three20/Build/Products/three20/;
-				INSTALL_PATH = "";
+				INSTALL_PATH = /usr/local/lib;
+				PRIVATE_HEADERS_FOLDER_PATH = include/TWTCommon/Private;
 				PRODUCT_NAME = TWTCommon;
-				PUBLIC_HEADERS_FOLDER_PATH = TWTCommon;
+				PUBLIC_HEADERS_FOLDER_PATH = include/TWTCommon;
 			};
 			name = Release;
 		};
@@ -295,6 +299,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PREBINDING = NO;
 				SDKROOT = iphoneos;
+				SYMROOT = Build;
 			};
 			name = Debug;
 		};
@@ -309,6 +314,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PREBINDING = NO;
 				SDKROOT = iphoneos;
+				SYMROOT = Build;
 			};
 			name = Release;
 		};

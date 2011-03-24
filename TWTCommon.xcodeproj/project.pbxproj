@@ -35,6 +35,30 @@
 		DBAF65E91267965A0043E289 /* TWTActionSheetDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = DB750A7E126791770061662C /* TWTActionSheetDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		25E5F115133BC07C00C33091 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 25E5F0EA133BC07B00C33091 /* Three20.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BEF31F3A0F352DF5000DE5D2;
+			remoteInfo = Three20;
+		};
+		25E5F117133BC07C00C33091 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 25E5F0EA133BC07B00C33091 /* Three20.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EB9E6C6210B6A8F800DE563C;
+			remoteInfo = Three20UnitTests;
+		};
+		25E5F11B133BC09100C33091 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 25E5F0EA133BC07B00C33091 /* Three20.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BEF31F390F352DF5000DE5D2;
+			remoteInfo = Three20;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		253A06EF1255109900976E89 /* NSString+TWTAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+TWTAdditions.h"; path = "Code/NSString+TWTAdditions.h"; sourceTree = "<group>"; };
 		253A06F01255109900976E89 /* NSString+TWTAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+TWTAdditions.m"; path = "Code/NSString+TWTAdditions.m"; sourceTree = "<group>"; };
@@ -55,6 +79,7 @@
 		253A06FF1255109A00976E89 /* TWTPickerDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TWTPickerDataSource.m; path = Code/TWTPickerDataSource.m; sourceTree = "<group>"; };
 		253A07001255109A00976E89 /* UIView+TWTAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+TWTAdditions.h"; path = "Code/UIView+TWTAdditions.h"; sourceTree = "<group>"; };
 		253A07011255109A00976E89 /* UIView+TWTAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+TWTAdditions.m"; path = "Code/UIView+TWTAdditions.m"; sourceTree = "<group>"; };
+		25E5F0EA133BC07B00C33091 /* Three20.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Three20.xcodeproj; path = ../three20/src/Three20/Three20.xcodeproj; sourceTree = "<group>"; };
 		3F05FEF312A95E5B00925C09 /* TWTGroupedPickerControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWTGroupedPickerControl.h; sourceTree = "<group>"; };
 		3F05FEF412A95E5B00925C09 /* TWTGroupedPickerControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWTGroupedPickerControl.m; sourceTree = "<group>"; };
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -88,6 +113,7 @@
 		0867D691FE84028FC02AAC07 /* TWTCommon */ = {
 			isa = PBXGroup;
 			children = (
+				25E5F0EA133BC07B00C33091 /* Three20.xcodeproj */,
 				08FB77AEFE84172EC02AAC07 /* Code */,
 				0867D69AFE84028FC02AAC07 /* Frameworks */,
 				034768DFFF38A50411DB9C8B /* Products */,
@@ -135,6 +161,15 @@
 			name = Code;
 			sourceTree = "<group>";
 		};
+		25E5F0EB133BC07B00C33091 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				25E5F116133BC07C00C33091 /* libThree20.a */,
+				25E5F118133BC07C00C33091 /* Three20UnitTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -173,6 +208,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				25E5F11C133BC09100C33091 /* PBXTargetDependency */,
 			);
 			name = TWTCommon;
 			productName = TWTCommon;
@@ -200,12 +236,35 @@
 			mainGroup = 0867D691FE84028FC02AAC07 /* TWTCommon */;
 			productRefGroup = 034768DFFF38A50411DB9C8B /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 25E5F0EB133BC07B00C33091 /* Products */;
+					ProjectRef = 25E5F0EA133BC07B00C33091 /* Three20.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				D2AAC07D0554694100DB518D /* TWTCommon */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		25E5F116133BC07C00C33091 /* libThree20.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libThree20.a;
+			remoteRef = 25E5F115133BC07C00C33091 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		25E5F118133BC07C00C33091 /* Three20UnitTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = Three20UnitTests.octest;
+			remoteRef = 25E5F117133BC07C00C33091 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXShellScriptBuildPhase section */
 		257FFF531270C63900424BC0 /* Protect Copied Headers */ = {
@@ -246,6 +305,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		25E5F11C133BC09100C33091 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Three20;
+			targetProxy = 25E5F11B133BC09100C33091 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
 		1DEB921F08733DC00010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -261,7 +328,11 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Code/TWTCommon_Prefix.pch;
-				HEADER_SEARCH_PATHS = ../three20/Build/Products/three20/;
+				HEADER_SEARCH_PATHS = (
+					"\"$(BUILT_PRODUCTS_DIR)/../three20\"",
+					"\"$(BUILT_PRODUCTS_DIR)/../../three20\"",
+					../three20/Build/Products/three20,
+				);
 				INSTALL_PATH = /usr/local/lib;
 				PRIVATE_HEADERS_FOLDER_PATH = include/TWTCommon/Private;
 				PRODUCT_NAME = TWTCommon;
@@ -279,7 +350,11 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Code/TWTCommon_Prefix.pch;
-				HEADER_SEARCH_PATHS = ../three20/Build/Products/three20/;
+				HEADER_SEARCH_PATHS = (
+					"\"$(BUILT_PRODUCTS_DIR)/../three20\"",
+					"\"$(BUILT_PRODUCTS_DIR)/../../three20\"",
+					../three20/Build/Products/three20,
+				);
 				INSTALL_PATH = /usr/local/lib;
 				PRIVATE_HEADERS_FOLDER_PATH = include/TWTCommon/Private;
 				PRODUCT_NAME = TWTCommon;

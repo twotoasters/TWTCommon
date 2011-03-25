@@ -13,4 +13,6 @@
 
 }
 
+- (NSArray*)rowsForComponent:(NSInteger)component replaceOptionTitlesWithNULL:(BOOL)replace;
+
 @end

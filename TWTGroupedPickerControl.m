@@ -8,6 +8,9 @@
 
 #import "TWTGroupedPickerControl.h"
 
+@interface TWTPickerControl (Private)
+- (void)updateLabel;
+@end
 
 @implementation TWTGroupedPickerControl
 
@@ -18,7 +21,7 @@
 	for(NSDictionary* componentDict in componentArray) {
 		assert([[componentDict allKeys] count] == 1);
 		for (NSString* key in [componentDict allKeys]) {
-			[totalObjects addObject:(replace ? [NSNull null] : key)];
+			[totalObjects addObject:(replace ? (NSString*) [NSNull null] : key)];
 			[totalObjects addObjectsFromArray:[componentDict valueForKey:key]];
 		}
 	}

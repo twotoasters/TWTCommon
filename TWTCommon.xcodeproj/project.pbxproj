@@ -279,7 +279,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "chmod -w \"${BUILT_PRODUCTS_DIR}/include/TWTCommon\"/*.h";
+			shellScript = "chmod -w \"${TARGET_BUILD_DIR}/include/TWTCommon\"/*.h";
 		};
 /* End PBXShellScriptBuildPhase section */
 

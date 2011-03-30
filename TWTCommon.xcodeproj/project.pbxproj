@@ -337,6 +337,7 @@
 				PRIVATE_HEADERS_FOLDER_PATH = include/TWTCommon/Private;
 				PRODUCT_NAME = TWTCommon;
 				PUBLIC_HEADERS_FOLDER_PATH = include/TWTCommon;
+				SKIP_INSTALL = YES;
 			};
 			name = Debug;
 		};
@@ -359,6 +360,7 @@
 				PRIVATE_HEADERS_FOLDER_PATH = include/TWTCommon/Private;
 				PRODUCT_NAME = TWTCommon;
 				PUBLIC_HEADERS_FOLDER_PATH = include/TWTCommon;
+				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};

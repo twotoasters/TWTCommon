@@ -376,6 +376,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PREBINDING = NO;
 				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
 				SYMROOT = Build;
 			};
 			name = Debug;
@@ -391,6 +392,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PREBINDING = NO;
 				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
 				SYMROOT = Build;
 			};
 			name = Release;

@@ -32,6 +32,8 @@
 	TWTPickerDataSource* _dataSource;
 	
 	NSMutableArray* _selection;
+    
+    BOOL _showsToolbar;
 }
 
 @property (nonatomic, readonly) UIView* pickerView;
@@ -107,6 +109,12 @@
  * The edge insets for the text label relative to the control frame.
  */
 @property (nonatomic, assign) UIEdgeInsets edgeInsets;
+
+
+/**
+ * Determines if the toolbar is shown. Defaults to YES
+ */
+@property (nonatomic, assign) BOOL showsToolbar;
 
 /**
  * Reset the toolbar. Called automatically when you set the title view.

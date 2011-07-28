@@ -34,9 +34,11 @@
 @synthesize dataSource = _dataSource;
 @synthesize selection = _selection;
 @synthesize edgeInsets = _edgeInsets;
+@synthesize showsToolbar = _showsToolbar;
 
 - (id)initWithFrame:(CGRect)frame {
-	if (self = [super initWithFrame:frame]) {
+    self = [super initWithFrame:frame];
+	if (self) {
 		_label = [[UILabel alloc] initWithFrame:self.bounds];
 		[self addSubview:_label];
 		self.placeholderText = @"Default Text";
@@ -168,6 +170,16 @@
 }
 
 - (BOOL)becomeFirstResponder {
+    if (_showsToolbar) {
+        _picker.frame = CGRectOffset(_picker.bounds, 0, 48);
+        _pickerView.frame = CGRectMake(0, 480, 320, 250);
+		[_pickerView addSubview:_toolbar];
+    } else {
+        _picker.frame = _picker.bounds;
+        _pickerView.frame = CGRectMake(0, 480, 320, 250);
+        [_toolbar removeFromSuperview];
+    }
+    
 	// replace nulls in selection with 0.
 	for (int i = 0; i < [[self.dataSource components] count]; i++) {
 		if ([self.selection objectAtIndex:i] == [NSNull null]) {
@@ -182,7 +194,11 @@
 	[self.window addSubview:_pickerView];
 	[_pickerView sizeToFit];
 	[UIView beginAnimations:@"Show Picker" context:nil];
-	_pickerView.frame = CGRectMake(0, self.window.bounds.size.height - _pickerView.bounds.size.height, 320, _pickerView.bounds.size.height);
+    float height = _pickerView.bounds.size.height;
+    if (!_showsToolbar) {
+        height -= 35;
+    }
+	_pickerView.frame = CGRectMake(0, self.window.bounds.size.height - height, 320, height);
 	[UIView commitAnimations];
 	if (self.selectedFont) {
 		_label.font	= self.selectedFont;

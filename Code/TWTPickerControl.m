@@ -33,6 +33,7 @@
 @synthesize delegate = _delegate;
 @synthesize dataSource = _dataSource;
 @synthesize selection = _selection;
+@synthesize edgeInsets = _edgeInsets;
 
 - (id)initWithFrame:(CGRect)frame {
 	if (self = [super initWithFrame:frame]) {
@@ -53,6 +54,8 @@
 		_picker.dataSource = self;
 		_picker.delegate = self;
 		self.selection = [NSArray array];
+        
+        _edgeInsets = UIEdgeInsetsZero;
 		
 		[self updateToolbar];
 		[self updateLabel];
@@ -260,7 +263,7 @@
 
 - (void)layoutSubviews {
 	[super layoutSubviews];
-	_label.frame = self.bounds;
+    _label.frame = UIEdgeInsetsInsetRect(self.bounds, _edgeInsets);
 }
 
 // Picker View DataSource

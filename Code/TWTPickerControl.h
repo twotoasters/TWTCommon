@@ -25,6 +25,8 @@
 	
 	NSString* _placeholderText;
 	UIView* _titleView;
+    
+    UIEdgeInsets _edgeInsets;
 	
 	NSObject<TWTPickerDelegate>* _delegate;
 	TWTPickerDataSource* _dataSource;
@@ -100,6 +102,11 @@
  * a current selection nil will be returned
  */
 @property (nonatomic, readonly) NSString* selectionText;
+
+/**
+ * The edge insets for the text label relative to the control frame.
+ */
+@property (nonatomic, assign) UIEdgeInsets edgeInsets;
 
 /**
  * Reset the toolbar. Called automatically when you set the title view.

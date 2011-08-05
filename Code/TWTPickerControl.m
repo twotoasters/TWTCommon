@@ -123,10 +123,12 @@
 	} else {
 		NSMutableArray* array = [NSMutableArray arrayWithCapacity:[self.selection count]];
 		for (int i = 0; i < [self.selection count]; i++) {
-			NSString* titleForRow = [self pickerView:_picker titleForRow:[[self.selection objectAtIndex:i] intValue] forComponent:i];
+            NSArray* component = [self.dataSource.components objectAtIndex:i];
+            uint row = [component indexOfObject:[self.selection objectAtIndex:i]];
+			NSString* titleForRow = [self pickerView:_picker titleForRow:row forComponent:i];
 			
 			if (nil == titleForRow) {
-				UIView* viewForRow = [self pickerView:_picker viewForRow:[[self.selection objectAtIndex:i] intValue] forComponent:i reusingView:nil];
+				UIView* viewForRow = [self pickerView:_picker viewForRow:row forComponent:i reusingView:nil];
 				
 				if (viewForRow && [viewForRow isKindOfClass:[UILabel class]]) {
 					titleForRow = ((UILabel*)viewForRow).text;
@@ -146,6 +148,10 @@
 	}
 }
 
+- (BOOL)isFirstResponder {
+    return _isFirstResponder;
+}
+
 - (BOOL)canBecomeFirstResponder {
 	return YES;
 }
@@ -162,11 +168,21 @@
 	
 	BOOL result = [super resignFirstResponder];
 	
+    if (result) {
+        _isFirstResponder = NO;
+    }
+    
 	if (result && [_delegate respondsToSelector:@selector(picker:didHidePicker:)]) {
-		[_delegate picker:self didHidePicker:_pickerView];
+        [_delegate retain];
+        [self performSelector:@selector(informDelegatePickerDidHide:) withObject:_pickerView afterDelay:0.0];
 	}
-	
+    
 	return result;
+}
+
+- (void)informDelegatePickerDidHide:(UIPickerView*)pickerView {
+    [_delegate picker:self didHidePicker:pickerView];
+    [_delegate release];
 }
 
 - (BOOL)becomeFirstResponder {
@@ -203,10 +219,16 @@
 	if (self.selectedFont) {
 		_label.font	= self.selectedFont;
 	}
+    
+    BOOL result = [super becomeFirstResponder];
+    if (result) {
+        _isFirstResponder = YES;
+    }
+    
 	if ([_delegate respondsToSelector:@selector(picker:didShowPicker:)]) {
 		[_delegate picker:self didShowPicker:_pickerView];
 	}
-	return [super becomeFirstResponder];
+	return result;
 }
 
 - (void)touchUpInside:(id)sender {
@@ -239,9 +261,11 @@
 	_selection = selection;
 	
 	// Ensure the underlying picker selection is correct
-	for (NSInteger i = 0; i < [[self.dataSource components] count]; i++) {		
-		int row = [[self.dataSource.components objectAtIndex:i] indexOfObject:[selection objectAtIndex:i]];
-		[_picker selectRow:row inComponent:i animated:YES];
+	for (NSInteger i = 0; i < [[self.dataSource components] count]; i++) {	
+        NSString* object = [selection objectAtIndex:i];
+        NSArray* component = [self.dataSource.components objectAtIndex:i];
+        int index = [component indexOfObject:object];
+        [_picker selectRow:index inComponent:i animated:YES];
 	}
 	
 	[self updateLabel];
@@ -300,7 +324,7 @@
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
 	[self.selection removeObjectAtIndex:component];
-	[self.selection insertObject:[NSNumber numberWithInt:row] atIndex:component];
+	[self.selection insertObject:[[self.dataSource.components objectAtIndex:component] objectAtIndex:row] atIndex:component];
 	[self updateLabel];
 	[self sizeToFit];
 	

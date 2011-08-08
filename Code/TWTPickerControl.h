@@ -34,6 +34,7 @@
 	NSMutableArray* _selection;
     
     BOOL _showsToolbar;
+    BOOL _isFirstResponder;
 }
 
 @property (nonatomic, readonly) UIView* pickerView;

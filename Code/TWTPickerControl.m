@@ -157,9 +157,13 @@
 }
 
 - (BOOL)resignFirstResponder {
+    if (!_isFirstResponder) {
+        return YES;
+    }
 	[UIView beginAnimations:@"Hide Picker" context:nil];
-	_pickerView.frame = CGRectMake(0, self.window.bounds.size.height + _pickerView.bounds.size.height, 320, _pickerView.bounds.size.height);
+	_pickerView.frame = CGRectMake(0, self.window.bounds.size.height + _pickerView.frame.size.height, 320, _pickerView.frame.size.height);
 	[UIView commitAnimations];
+    
 	_label.font = self.font;
 	
 	if ([_delegate respondsToSelector:@selector(picker:willHidePicker:)]) {

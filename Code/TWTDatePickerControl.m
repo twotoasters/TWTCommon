@@ -15,6 +15,8 @@
 
 @implementation TWTDatePickerControl
 
+@synthesize dateLabelFormat = _dateLabelFormat;
+
 - (id)initWithFrame:(CGRect)frame mode:(UIDatePickerMode)mode startDate:(NSDate*)startDate endDate:(NSDate*)endDate {
 	if (self = [self initWithFrame:frame]) {
 		[_picker removeFromSuperview];
@@ -27,6 +29,7 @@
 		[(UIDatePicker*)_picker addTarget:self action:@selector(datePickerChanged:) forControlEvents:UIControlEventValueChanged];
 		[_pickerView addSubview:_picker];
 		[self datePickerChanged:nil];
+        _dateLabelFormat = @"";
 	}
 	return self;
 }
@@ -60,7 +63,11 @@
 			return;
 		}
 
-		if(UIDatePickerModeDate == [(UIDatePicker*)_picker datePickerMode]) {
+        if (![_dateLabelFormat isEqualToString:@""]) {
+            [formatter setDateFormat:_dateLabelFormat];
+            _label.text = [NSString stringWithFormat:[formatter stringFromDate:date]];
+            return;
+        } else if (UIDatePickerModeDate == [(UIDatePicker*)_picker datePickerMode]) {
 			[formatter setDateFormat:@"EEE MMM d'%@'"];
 		} else {
 			[formatter setDateFormat:@"EEE MMM d'%@', h:mma"];

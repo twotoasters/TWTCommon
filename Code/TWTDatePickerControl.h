@@ -9,8 +9,13 @@
 #import "TWTPickerControl.h"
 
 @interface TWTDatePickerControl : TWTPickerControl {
-	
+	NSString* _dateLabelFormat;
 }
+
+/**
+ * 
+ */
+@property (nonatomic, retain) NSString* dateLabelFormat;
 
 /**
  * Initializes a new date picker with the provided range. Use nil for start or end dates to unrestrict the range.

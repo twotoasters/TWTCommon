@@ -157,6 +157,9 @@
 }
 
 - (BOOL)resignFirstResponder {
+    if (![self isFirstResponder]) {
+        return YES;
+    }
 	[UIView beginAnimations:@"Hide Picker" context:nil];
 	_pickerView.frame = CGRectMake(0, self.window.bounds.size.height + _pickerView.bounds.size.height, 320, _pickerView.bounds.size.height);
 	[UIView commitAnimations];

@@ -13,14 +13,14 @@
 }
 
 /**
- * 
- */
-@property (nonatomic, retain) NSString* dateLabelFormat;
-
-/**
  * Initializes a new date picker with the provided range. Use nil for start or end dates to unrestrict the range.
  */
 - (id)initWithFrame:(CGRect)frame mode:(UIDatePickerMode)mode startDate:(NSDate*)startDate endDate:(NSDate*)endDate;
+
+/**
+ * Initializes a new date picker with the provided range. Use nil for start or end dates to unrestrict the range. Use date label format to force a specific format for date label.
+ */
+- (id)initWithFrame:(CGRect)frame mode:(UIDatePickerMode)mode startDate:(NSDate*)startDate endDate:(NSDate*)endDate dateLabelFormat:(NSString*)dateLabelFormat;
 
 /**
  * The currently selected date. also the date represented on the label

@@ -15,9 +15,11 @@
 
 @implementation TWTDatePickerControl
 
-@synthesize dateLabelFormat = _dateLabelFormat;
-
 - (id)initWithFrame:(CGRect)frame mode:(UIDatePickerMode)mode startDate:(NSDate*)startDate endDate:(NSDate*)endDate {
+	return [self initWithFrame:frame mode:mode startDate:startDate endDate:endDate dateLabelFormat:nil];
+}
+
+- (id)initWithFrame:(CGRect)frame mode:(UIDatePickerMode)mode startDate:(NSDate*)startDate endDate:(NSDate*)endDate dateLabelFormat:(NSString*)dateLabelFormat {
 	if (self = [self initWithFrame:frame]) {
 		[_picker removeFromSuperview];
 		[_picker release];
@@ -28,8 +30,8 @@
 		[(UIDatePicker*)_picker setMinuteInterval:5];
 		[(UIDatePicker*)_picker addTarget:self action:@selector(datePickerChanged:) forControlEvents:UIControlEventValueChanged];
 		[_pickerView addSubview:_picker];
+        _dateLabelFormat = [dateLabelFormat copy];
 		[self datePickerChanged:nil];
-        _dateLabelFormat = @"";
 	}
 	return self;
 }
@@ -58,16 +60,15 @@
 		// Set the text to 'Today' if appropriate
 		NSDate* today = [NSDate date];
 		[formatter setDateStyle:NSDateFormatterShortStyle];
-		if ([[formatter stringFromDate:date] isEqualToString:[formatter stringFromDate:today]]) {
-			_label.text = @"Today";
-			return;
-		}
 
-        if (![_dateLabelFormat isEqualToString:@""]) {
+        if ([_dateLabelFormat length] > 0) {
             [formatter setDateFormat:_dateLabelFormat];
             _label.text = [NSString stringWithFormat:[formatter stringFromDate:date]];
             return;
-        } else if (UIDatePickerModeDate == [(UIDatePicker*)_picker datePickerMode]) {
+        } else if ([[formatter stringFromDate:date] isEqualToString:[formatter stringFromDate:today]]) {
+			_label.text = @"Today";
+			return;
+		} else if (UIDatePickerModeDate == [(UIDatePicker*)_picker datePickerMode]) {
 			[formatter setDateFormat:@"EEE MMM d'%@'"];
 		} else {
 			[formatter setDateFormat:@"EEE MMM d'%@', h:mma"];

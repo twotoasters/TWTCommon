@@ -32,6 +32,9 @@
 	NSMutableArray* _selection;
 }
 
+@property (nonatomic, retain) UIView* inputView;
+@property (nonatomic, retain) UIView* inputAccessoryView;
+
 @property (nonatomic, readonly) UIView* pickerView;
 
 /**
@@ -114,9 +117,6 @@
 @optional
 
 - (void)picker:(TWTPickerControl*)picker nextButtonWasTouched:(id)sender;
-- (void)picker:(TWTPickerControl*)picker didShowPicker:(UIView*)pickerView;
-- (void)picker:(TWTPickerControl*)picker willHidePicker:(UIView*)pickerView;
-- (void)picker:(TWTPickerControl*)picker didHidePicker:(UIView*)pickerView;
 
 - (void)picker:(TWTPickerControl*)picker didSelectChoiceAtIndex:(int)index forComponent:(int)component;
 

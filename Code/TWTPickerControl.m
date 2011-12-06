@@ -17,7 +17,6 @@
 
 @end
 
-
 @implementation TWTPickerControl
 
 // todo: The following need to update UI when set. Perhaps a -redraw: method to call after?
@@ -33,6 +32,8 @@
 @synthesize delegate = _delegate;
 @synthesize dataSource = _dataSource;
 @synthesize selection = _selection;
+@synthesize inputView = _myInputView;
+@synthesize inputAccessoryView = _myInputAccessoryView;
 
 - (id)initWithFrame:(CGRect)frame {
 	if (self = [super initWithFrame:frame]) {
@@ -42,18 +43,21 @@
 		_label.backgroundColor = [UIColor clearColor];
 		self.font = _label.font;
 		[self addTarget:self action:@selector(touchUpInside:) forControlEvents:UIControlEventTouchUpInside];
-		_pickerView = [[UIView alloc] initWithFrame:CGRectMake(0, 480, 320, 250)];
-		_picker = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 48, 320, 150)];
+		
+        _picker = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 48, 320, 150)];
 		[_picker sizeToFit];
 		_picker.showsSelectionIndicator = YES;
-		[_pickerView addSubview:_picker];
+        
 		_toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 320, 48)];
-		[_pickerView addSubview:_toolbar];
-		_pickerView.clipsToBounds = YES;
+        
 		_picker.dataSource = self;
 		_picker.delegate = self;
-		self.selection = [NSArray array];
 		
+        self.selection = [NSArray array];
+		
+        self.inputView = _picker;
+        self.inputAccessoryView = _toolbar;
+        
 		[self updateToolbar];
 		[self updateLabel];
 	}
@@ -142,29 +146,7 @@
 }
 
 - (BOOL)canBecomeFirstResponder {
-	return YES;
-}
-
-- (BOOL)resignFirstResponder {
-    if (![self isFirstResponder]) {
-        return YES;
-    }
-	[UIView beginAnimations:@"Hide Picker" context:nil];
-	_pickerView.frame = CGRectMake(0, self.window.bounds.size.height + _pickerView.bounds.size.height, 320, _pickerView.bounds.size.height);
-	[UIView commitAnimations];
-	_label.font = self.font;
-	
-	if ([_delegate respondsToSelector:@selector(picker:willHidePicker:)]) {
-		[_delegate picker:self willHidePicker:_pickerView];
-	}
-	
-	BOOL result = [super resignFirstResponder];
-	
-	if (result && [_delegate respondsToSelector:@selector(picker:didHidePicker:)]) {
-		[_delegate picker:self didHidePicker:_pickerView];
-	}
-	
-	return result;
+    return YES;
 }
 
 - (BOOL)becomeFirstResponder {
@@ -176,36 +158,17 @@
 		}
 	}
 	[self updateLabel];
-	
-	UIWindow* keyWindow = [[UIApplication sharedApplication] keyWindow];
-	[[keyWindow findFirstResonder] resignFirstResponder];
-	[self.window addSubview:_pickerView];
-	[_pickerView sizeToFit];
-	[UIView beginAnimations:@"Show Picker" context:nil];
-	_pickerView.frame = CGRectMake(0, self.window.bounds.size.height - _pickerView.bounds.size.height, 320, _pickerView.bounds.size.height);
-	[UIView commitAnimations];
-	if (self.selectedFont) {
-		_label.font	= self.selectedFont;
-	}
-	if ([_delegate respondsToSelector:@selector(picker:didShowPicker:)]) {
-		[_delegate picker:self didShowPicker:_pickerView];
-	}
-	return [super becomeFirstResponder];
+    return [super becomeFirstResponder];
 }
 
 - (void)touchUpInside:(id)sender {
 	[self becomeFirstResponder];
 }
 
-- (void)dismissPicker:(id)sender {
-	[self resignFirstResponder];
-}
-
 - (void)nextButtonWasTouched:(id)sender {
 	if ([(NSObject*)_delegate respondsToSelector:@selector(picker:nextButtonWasTouched:)]) {
 		[_delegate picker:self nextButtonWasTouched:sender];
 	}
-	[self dismissPicker:self];
 }
 
 - (void)resetSelection {

@@ -171,6 +171,10 @@
 	}
 }
 
+- (void)dismissPicker:(id)sender {
+    [self resignFirstResponder];
+}
+
 - (void)resetSelection {
 	NSMutableArray* array = [NSMutableArray arrayWithCapacity:[[self.dataSource components] count]];
 	for (int i = 0; i < [[self.dataSource components] count]; i++) {

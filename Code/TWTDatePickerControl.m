@@ -23,7 +23,7 @@
 	if (self = [self initWithFrame:frame]) {
 		[_picker removeFromSuperview];
 		[_picker release];
-		_picker = [[UIDatePicker alloc] initWithFrame:CGRectMake(0, 48, 320, 150)];
+		_picker = (UIPickerView *)[[UIDatePicker alloc] initWithFrame:CGRectMake(0, 48, 320, 150)];
 		[(UIDatePicker*)_picker setDatePickerMode:mode];
 		[(UIDatePicker*)_picker setMinimumDate:startDate];
 		[(UIDatePicker*)_picker setMaximumDate:endDate];

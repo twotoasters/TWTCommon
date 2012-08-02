@@ -265,10 +265,13 @@
 	
 	// Ensure the underlying picker selection is correct
 	for (NSInteger i = 0; i < [[self.dataSource components] count]; i++) {	
-        NSString* object = [selection objectAtIndex:i];
-        NSArray* component = [self.dataSource.components objectAtIndex:i];
-        int index = [component indexOfObject:object];
-        [_picker selectRow:index inComponent:i animated:YES];
+//        NSString* object = [selection objectAtIndex:i];
+//        NSArray* component = [self.dataSource.components objectAtIndex:i];
+//        if (!object) {
+//            break;
+//        }
+//        int index = [component indexOfObject:object];
+//        [_picker selectRow:index inComponent:i animated:YES];
 	}
 	
 	[self updateLabel];

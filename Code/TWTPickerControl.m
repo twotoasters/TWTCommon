@@ -268,7 +268,9 @@
         NSString* object = [selection objectAtIndex:i];
         NSArray* component = [self.dataSource.components objectAtIndex:i];
         int index = [component indexOfObject:object];
-        [_picker selectRow:index inComponent:i animated:YES];
+        if (index != NSNotFound) {
+            [_picker selectRow:index inComponent:i animated:YES];
+        }
 	}
 	
 	[self updateLabel];
